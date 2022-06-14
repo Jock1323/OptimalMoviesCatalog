@@ -28,10 +28,13 @@ elForm.addEventListener('submit', evt => {
     elUnordered.innerHTML = null
     sortCards(films)
     if (elSelect.value === 'all') {
+        searchNumber.textContent = films.length
         renderMovies(films)
     }
-    renderMovies(arr);
-    searchNumber.textContent = arr.length
+    else{
+        renderMovies(arr);
+        searchNumber.textContent = arr.length
+    }
 })
 sortCards(films)
 //RenderMovies
