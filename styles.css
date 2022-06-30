@@ -3,9 +3,128 @@
     padding: 0;
     box-sizing: border-box;
 }
+.list{
+    height:80vh;
+    overflow-y: scroll;
+    margin-top: 20px;
+}
+::-webkit-scrollbar {
+    width:10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius:5px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(0, 89, 255); 
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+  }
+.liked,
+.liked-number{
+    right:10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color:red;
+    cursor: pointer;
+    font-size: 35px;
+}
+.liked-number{
+    right:12px;
+    font-size:10px;
+    color: #fff;
+}
 .card{
     width:30%;
+    text-align: center;
 }
+.btn__moreinfo{
+    margin-left: 10px;
+    color: #fff;
+}
+.btn__select{
+    margin-top: 10px;
+}
+
+.modal-window,
+.favourites-modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    max-width: 800px;
+    max-height: 600px;
+    background-color: #f7f7f7;
+    z-index: 1;
+    transform: translate(-50%,-50%);
+    transition: all .5s ease;
+    overflow: hidden;
+    padding-right: 10px;
+}
+.overlay-window,
+.favourites-overlay{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height:100vh;
+    backdrop-filter:blur(10px);
+    background-color: rgba(0, 0,0,.8);
+    transform: translateX(0);
+    transition: all .3s ease-in-out;
+    overflow:hidden;
+}
+.favourites-modal{
+    position: fixed;
+    top: 0;
+    max-width: 800px;
+    max-height:100vh;
+    height: 100vh;
+    flex-direction: column;
+    transform: translateX(0);
+    overflow: auto;
+}
+.favourites-modal,
+.favourites-overlay{
+    right: 0;
+}
+.favourites-overlay{
+    z-index: 2;
+}
+.favourites-modal{
+    z-index: 4;
+}
+.favourites-box{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.errorMessage{
+    text-align: center;
+    font-weight: 500;
+    margin-top:20%;   
+    font-size: 30px;
+}
+
+.modal__img{
+    width: 50%;
+    margin-right: 10px;
+}
+.hidden{
+    transform: translateX(-100%);
+}
+.hide{
+    transform: translateX(100%);
+}
+
 @media only screen and (max-width:991px){
     .card{
         width: 48%;
